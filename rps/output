@@ -1,0 +1,12 @@
+nohup: ignoring input
+Connection established to mongodb://localhost:27017/janken
+[0mGET / [36m304 [0m6.692 ms - -[0m
+[0mGET /javascripts/app.js [36m304 [0m1.763 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m0.614 ms - -[0m
+[0mGET /images/stopwatch.jpg [36m304 [0m0.407 ms - -[0m
+[0mGET /stylesheets/style.css [32m200 [0m2.426 ms - 319[0m
+[0mGET /images/stopwatch.jpg [32m200 [0m1.225 ms - 13223[0m
+[0mGET /images/questionHand.png [36m304 [0m0.434 ms - -[0m
+[0mGET /images/rock.png [36m304 [0m0.256 ms - -[0m
+[0mGET /images/paper.png [36m304 [0m0.216 ms - -[0m
+[0mGET /images/scissors.png [36m304 [0m0.261 ms - -[0m

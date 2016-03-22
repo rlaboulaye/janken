@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+	<script src="./javascripts/app.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta charset="utf-8">
+	<title>Rock-Paper-Scissors Challenge</title>
+</head>
+<body id="Body" ng-app='app' ng-controller='mainCtrl'>
+
+	<div class="container-fluid">
+
+		<div class='selectContainer top-buffer' ng-show="select">
+			<div class="row innerCol">
+				<h1>The Rock-Paper-Scissors Challenge</h1>
+				<br/><br/>
+			</div>
+			<div class="row innerCol">
+				<h2>Pick your poison:</h2>
+				<br/><br/>
+			</div>
+      <div class="row">
+				<div class="col-sm-offset-3 col-sm-2">
+					<button class="btn btn-default" ng-click="chooseRandom()">Battle a Random Bot</button>
+					<br/><br/>
+					<button class="btn btn-default" ng-click="showRecord()">Show WinLoss Record</button>
+				</div>
+				<div class="col-sm-offset-2 col-sm-2">
+					<button class="btn btn-default" ng-click="chooseChallenge()">Battle a Smart Bot</button>
+					<br/><br/>
+					<button class="btn btn-default" ng-click="showRecord()">Show WinLoss Record</button>
+				</div>
+      </div>
+		</div>
+
+		<div id="recordContainer" class="top-buffer" ng-show="winLossRecord">
+			<div class="innerCol">
+				<h1>{{totalVictories}} Victories / {{totalLosses}} Losses / {{totalGames}} Games</h1>
+				<br/><br/><br/>
+				<button class="btn btn-default" ng-click="hideRecord()">Back</button>
+			</div>
+		</div>
+
+		<div id="chooseContainer" ng-show="chooseSign">
+      <div class="row">
+				<div class="col-xs-offset-2 col-xs-2">
+					<img id="stopwatch" class="img-rounded" src="images/stopwatch.jpg" alt="stopwatch" /><h5> {{timeSeconds}}:{{timeMS}} / 7:00</h2>
+				</div>
+				<div class="col-xs-offset-1 col-xs-2">
+					<h2>Round {{round}}</h2>
+				</div>
+				<div class="col-xs-offset-1 col-xs-2">
+					<img class="icon img-rounded" src="images/questionHand.png" alt="opponent hand" />
+				</div>
+      </div>
+      <div class="row top-buffer">
+				<div class="col-xs-2">
+					<h3>Select your move: </h3>
+				</div>
+        <div class="col-xs-2">
+          <a href="" ng-click="selectSign(ROCK)" ng-mouseover="hoverSign()"><img class="icon img-rounded" src="images/rock.png" alt="rock" /></a>
+        </div>
+        <div class="col-xs-offset-1 col-xs-2">
+          <a href="" ng-click="selectSign(PAPER)" ng-mouseover="hoverSign()"><img class="icon img-rounded" src="images/paper.png" alt="paper" /></a>
+        </div>
+        <div class="col-xs-offset-1 col-xs-2">
+          <a href="" ng-click="selectSign(SCISSORS)" ng-mouseover="hoverSign()"><img class="icon img-rounded" src="images/scissors.png" alt="scissors" /></a>
+        </div>
+      </div>
+		</div>
+
+		<div id="gameResultContainer" class="top-buffer" ng-show="gameResult">
+			<div class="innerCol">
+				<h1 class="displayString" ng-show="showString">{{resultString}}</h1>
+			</div>
+
+			<div class="row innerCol" ng-show="showSigns">
+				<div class="col-xs-6">
+					<h2>Your Move</h2>
+					<img ng-src="{{signImg}}" ng-show="showSigns" class="icon img-rounded"/>
+				</div>
+				<div class="col-xs-6" ng-show="showSigns">
+					<h2>The Bot's Move</h2>
+					<img ng-src="{{signOpponentImg}}" ng-show="showSigns" class="icon img-rounded"/>
+				</div>
+      </div>
+		</div>
+
+		<div id="matchResultContainer" class="top-buffer" ng-show="matchResult">
+			<div class="innerCol">
+				<h1>{{matchString}}</h1>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
