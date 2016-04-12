@@ -9,6 +9,7 @@ a {
 
 .icon {
   height: 200px;
+  width: 200px;
 }
 
 #stopwatch {
@@ -17,8 +18,16 @@ a {
   margin: 15px;
 }
 
+.android {
+  height: 250px;
+}
+
+.equalWidth {
+  width: 165px;
+}
+
 .top-buffer {
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
 .innerCol {

@@ -14,6 +14,54 @@
 
 	<div class="container-fluid">
 
+		<div ng-show="showLogin">
+			<div class="row innerCol">
+				<h1>The Rock-Paper-Scissors Challenge</h1>
+				<br/><br/>
+			</div>
+			<div class="row innerCol">
+				<form ng-submit="logIn()" style = "margin-top30px;">
+					<div class="row">
+						<div class="col-md-offset-2 col-md-8">
+							<p>Username: </p>
+							<input type="text" ng-model="username"></input>
+							<br/>
+							<p>Password: </p>
+							<input type="password" ng-model="password"></input>
+							<br/><br/>
+							<button class="btn btn-primary" type="submit">Sign In</button>
+						</div>
+					</div>
+				</form>
+				<br/><br/>
+				<button  class="btn btn-default" ng-click="toRegister()">Sign Up</button>
+			</div>
+		</div>
+
+		<div ng-show="showRegister">
+			<div class="row innerCol">
+				<h1>Register</h1>
+				<br/><br/>
+			</div>
+			<div class="row innerCol">
+			<form ng-submit="signUp()" style = "margin-top30px;">
+				<div class="row">
+					<div class="col-md-offset-2 col-md-8">
+						<p>Username: </p>
+						<input type="text" ng-model="username"></input>
+						<br/>
+						<p>Password: </p>
+						<input type="text" ng-model="password"></input>
+						<br/><br/>
+						<button class="btn btn-primary" type="submit">Sign up</button>
+					</div>
+				</div>
+			</form>
+			<br/><br/>
+			<button class="btn btn-default" ng-click="toLogin()">Back to login page</button>
+		</div>
+	</div>
+
 		<div class='selectContainer top-buffer' ng-show="select">
 			<div class="row innerCol">
 				<h1>The Rock-Paper-Scissors Challenge</h1>
@@ -25,14 +73,16 @@
 			</div>
       <div class="row">
 				<div class="col-sm-offset-3 col-sm-2">
-					<button class="btn btn-default" ng-click="chooseRandom()">Battle a Random Bot</button>
+					<a href=""><img alt="evil android" class="img img-thumbnail equalWidth android" ng-click="chooseRandom()" src="images/android.png" /></a>
+					<button class="btn btn-default equalWidth" ng-click="chooseRandom()">Battle a Random Bot</button>
 					<br/><br/>
-					<button class="btn btn-default" ng-click="showRecord()">Show WinLoss Record</button>
+					<button class="btn btn-default equalWidth" ng-click="showRecord()">Show WinLoss Record</button>
 				</div>
 				<div class="col-sm-offset-2 col-sm-2">
-					<button class="btn btn-default" ng-click="chooseChallenge()">Battle a Smart Bot</button>
+					<a href=""><img alt="evil android" class="img img-thumbnail icon equalWidth android" ng-click="chooseChallenge()" src="images/evil_android.png" /></a>
+					<button class="btn btn-default equalWidth" ng-click="chooseChallenge()">Battle a Smart Bot</button>
 					<br/><br/>
-					<button class="btn btn-default" ng-click="showRecord()">Show WinLoss Record</button>
+					<button class="btn btn-default equalWidth" ng-click="showRecord()">Show WinLoss Record</button>
 				</div>
       </div>
 		</div>
@@ -62,13 +112,13 @@
 					<h3>Select your move: </h3>
 				</div>
         <div class="col-xs-2">
-          <a href="" ng-click="selectSign(ROCK)" ng-mouseover="hoverSign()"><img class="icon img-rounded" src="images/rock.png" alt="rock" /></a>
+          <a href="" ng-click="selectSign(ROCK)" ng-mouseover="hoverSign()"><img class="icon img-thumbnail" src="images/rock.png" alt="rock" /></a>
         </div>
         <div class="col-xs-offset-1 col-xs-2">
-          <a href="" ng-click="selectSign(PAPER)" ng-mouseover="hoverSign()"><img class="icon img-rounded" src="images/paper.png" alt="paper" /></a>
+          <a href="" ng-click="selectSign(PAPER)" ng-mouseover="hoverSign()"><img class="icon img-thumbnail" src="images/paper.png" alt="paper" /></a>
         </div>
         <div class="col-xs-offset-1 col-xs-2">
-          <a href="" ng-click="selectSign(SCISSORS)" ng-mouseover="hoverSign()"><img class="icon img-rounded" src="images/scissors.png" alt="scissors" /></a>
+          <a href="" ng-click="selectSign(SCISSORS)" ng-mouseover="hoverSign()"><img class="icon img-thumbnail" src="images/scissors.png" alt="scissors" /></a>
         </div>
       </div>
 		</div>
@@ -80,11 +130,11 @@
 
 			<div class="row innerCol" ng-show="showSigns">
 				<div class="col-xs-6">
-					<h2>Your Move</h2>
+					<h2>You</h2>
 					<img ng-src="{{signImg}}" ng-show="showSigns" class="icon img-rounded"/>
 				</div>
 				<div class="col-xs-6" ng-show="showSigns">
-					<h2>The Bot's Move</h2>
+					<h2>The Bot</h2>
 					<img ng-src="{{signOpponentImg}}" ng-show="showSigns" class="icon img-rounded"/>
 				</div>
       </div>
